@@ -2317,12 +2317,14 @@ local library library = {
                         self.switch()
                     end)
 
+                    local folderCache = { }
                     function self.new(type, typeOptions)
                         assert(typeof(type) == "string", "expected string as #1 argument")
                         type = type:lower()
                         local p = rawget(types, type)
                         assert(p, "invalid type")
                         local o = p(typeOptions)
+                        table.insert(folderCache, o)
                         o.type = type
                         o.self.Parent = folderItems
 
@@ -2352,6 +2354,9 @@ local library library = {
                     self.updated = folder:GetPropertyChangedSignal("Size")
 
                     function self:Destroy()
+                        for i, v in next, folderCache do
+                            v:Destroy()
+                        end
                         folder:Destroy()
                     end
 
