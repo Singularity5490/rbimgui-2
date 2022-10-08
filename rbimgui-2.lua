@@ -1511,7 +1511,7 @@ local library library = {
                     label.TextColor3 = labelOptions.color
 
                     function self.setText(text)
-                        label.Text = labelOptions.text
+                        label.Text = text
                         label.Size = UDim2.new(0, label.TextBounds.X, 0, label.Size.Y.Offset)
                     end
 
