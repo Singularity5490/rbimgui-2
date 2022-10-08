@@ -1501,12 +1501,23 @@ local library library = {
 
                     labelOptions = settings.new({
                         text = "New Label",
+                        color = Color3.new(1, 1, 1),
                     }).handle(labelOptions)
 
                     local label = new("Label")
                     label.Parent = items
                     label.Text = labelOptions.text
                     label.Size = UDim2.new(0, label.TextBounds.X, 0, label.Size.Y.Offset)
+                    label.TextColor3 = labelOptions.color
+
+                    function self.setText(text)
+                        label.Text = labelOptions.text
+                        label.Size = UDim2.new(0, label.TextBounds.X, 0, label.Size.Y.Offset)
+                    end
+
+                    function self.setColor(color)
+                        label.TextColor3 = color
+                    end
 
                     function self:Destroy()
                         label:Destroy()
