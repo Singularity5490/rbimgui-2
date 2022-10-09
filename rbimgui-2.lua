@@ -1658,7 +1658,7 @@ local library library = {
                     }).handle(sliderOptions)
                     self.value = sliderOptions.value
                     self.event = event.new()
-                    self.eventBlock
+                    self.eventBlock = false
 
                     local function round(x, n)
                         local a = tostring(x * 10^n)
