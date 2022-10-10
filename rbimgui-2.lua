@@ -1542,7 +1542,7 @@ local library library = {
                     button.Text = buttonOptions.text
                     button.Size = UDim2.new(0, button.TextBounds.X + 20, 0, 20)
                     button.MouseButton1Click:Connect(function()
-                        if not selv.eventBlock then
+                        if not self.eventBlock then
                             self.event:Fire()
                         end
                     end)
