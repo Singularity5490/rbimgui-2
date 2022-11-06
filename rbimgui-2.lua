@@ -1813,7 +1813,7 @@ local library library = {
                         self.isopen = false
 
                         resize(colorPicker:FindFirstChild("Expand"), { Rotation = 0 }, options.animation)
-                        colorCache.content_size = content.Size.Y.Offset
+                        colorCache.content_size = 200
                         colorCache.tabs_size = tabs.Size.Y.Offset
                         resize(colorPicker:FindFirstChild("Content"), { Size = UDim2.new(1, 0, 0, 0) }, options.animation)
                     end
@@ -2037,7 +2037,7 @@ local library library = {
                         self.isopen = false
 
                         resize(dropdownWindow:FindFirstChild("Expand"), { Rotation = 0 }, options.animation)
-                        dropdownCache.content_size = content.Size.Y.Offset
+                        dropdownCache.content_size = 200
                         dropdownCache.tabs_size = tabs.Size.Y.Offset
                         resize(dropdownWindow:FindFirstChild("Content"), { Size = UDim2.new(1, 0, 0, 0) }, options.animation)
                     end
