@@ -2234,6 +2234,10 @@ local library library = {
                         end)
                     end
 
+                    function self.setPosition(position)
+                        dropdownWindow.Position = position
+                    end
+
                     function self:Destroy()
                         dropdownButton:Destroy()
                         dropdownWindow:Destroy()
